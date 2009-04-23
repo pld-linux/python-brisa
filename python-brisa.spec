@@ -2,16 +2,20 @@
 Summary:	UPnP framework for creating and managing UPnP devices
 Name:		python-%{module}
 Version:	0.8.0
-Release:	0.1
+Release:	0.2
 License:	MIT
 Group:		Development/Languages/Python
 Source0:	https://garage.maemo.org/frs/download.php/5387/%{name}_%{version}-0maemo2.tar.gz
 # Source0-md5:	426f8f861774948c65a763f1e5cc16a0
 URL:		http://brisa.garage.maemo.org/
-BuildRequires:	python-devel
+BuildRequires:	python-devel >= 1:2.5
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.219
-Requires:	python-modules
+Requires:	python-modules >= 1:2.5
+Requires:	python-cherrypy
+Requires:	python-inotify
+Requires:	python-mutagen
+Requires:	python-gstreamer
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -71,7 +75,5 @@ rm -rf $RPM_BUILD_ROOT
 %{py_sitescriptdir}/brisa/utils/*.py[co]
 %{py_sitescriptdir}/brisa/xml_descriptions/*.py[co]
 %{py_sitescriptdir}/brisa/xml_descriptions/*.xml
-%if "%{py_ver}" > "2.4"
 %{py_sitescriptdir}/*.egg-info
-%endif
 %attr(755,root,root) %{_bindir}/brisa-conf
