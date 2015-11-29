@@ -10,7 +10,7 @@ Source0:	https://garage.maemo.org/frs/download.php/5387/%{name}_%{version}-0maem
 URL:		http://brisa.garage.maemo.org/
 BuildRequires:	python-devel >= 1:2.5
 BuildRequires:	rpm-pythonprov
-BuildRequires:	rpmbuild(macros) >= 1.219
+BuildRequires:	rpmbuild(macros) >= 1.710
 Requires:	python-modules >= 1:2.5
 Requires:	python-cherrypy
 Requires:	python-inotify
